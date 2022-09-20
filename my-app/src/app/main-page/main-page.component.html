@@ -1,0 +1,112 @@
+
+<div class="header"><h1  class="line-1 anim-typewriter">Users</h1>
+<button class="add-btn" (click)="appearAddForm=true">Add new user</button></div>
+<div class="table">
+  <div class="table-head">
+    <p>index</p>
+    <p>ID</p>
+    <p>Name</p>
+    <p>Username</p>
+    <p>Email</p>
+    <p>Website</p>
+  </div>
+
+
+  <div *ngFor="let user of users; let indexOfelement=index;" class="table-row">
+    <p>{{indexOfelement + 1}}</p>
+    <p>#{{user.id}}</p>
+    <p>{{user.name}}</p>
+    <p>{{user.username}}</p>
+    <p>{{user.email}}</p>
+    <p>{{user.website}}</p>
+    <button (click)="editUserClick(user)" style="background-color: #c5f6e1; color: #72ad95">Edit</button>
+    <button (click)="deleteUserClick(user.id)" style="background-color: #f5b8cd; color: #c6557a">Delete</button>
+  </div>
+</div>
+
+<div class="add-form" id="section2"
+     [ngStyle]="{'visibility':appearAddForm == true ? 'visible' : 'hidden',
+     'opacity':appearAddForm == true ? '1' : '0' }">
+  <div class="wrapper">
+    <h2>Create new User</h2>
+    <div>
+      <form [formGroup]="formValue">
+        <label>ID
+          <div *ngIf="formValue.get('id').invalid" style="color: red">
+            Id is required.
+          </div>
+        </label>
+        <input class="form-input" type="number" placeholder="enter ID" formControlName="id">
+        <label>Name
+          <div *ngIf="formValue.get('name').invalid" style="color: red">
+            Name should contain 2 symbols at least.
+          </div>
+        </label>
+        <input class="form-input" type="text" placeholder="enter Name" formControlName="name">
+        <label>Username
+          <div *ngIf="formValue.get('username').invalid" style="color: red">
+            Username should contain 2 symbols at least.
+          </div>
+        </label>
+        <input class="form-input" type="text" placeholder="enter Username" formControlName="username">
+        <label>Email
+          <div *ngIf="formValue.get('email').invalid" style="color: red">
+            Email not valid.
+          </div>
+        </label>
+        <input class="form-input" type="email" placeholder="enter Email" formControlName="email">
+        <label>Website
+          <div *ngIf="formValue.get('website').invalid" style="color: red">
+            Website should contain 2 symbols at least.
+          </div>
+        </label>
+        <input class="form-input" type="text" placeholder="enter Website" formControlName="website">
+        <div class="form-button-block">
+          <button class="form-button" (click)="appearAddForm=false">Cancel</button>
+          <input class="form-button" [disabled]="formValue.invalid" (click)="addUserClick()" type="submit" value="Add new user"></div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<div class="add-form"
+     [ngStyle]="{'visibility':appearEditForm == true ? 'visible' : 'hidden',
+     'opacity':appearEditForm == true ? '1' : '0' }">
+  <div class="wrapper">
+    <h2>Edit User</h2>
+    <div>
+      <form [formGroup]="formValue">
+        <label>ID not for change</label>
+        <input readonly class="form-input" type="number" placeholder="enter ID" formControlName="id">
+        <label>Name
+          <div *ngIf="formValue.get('name').invalid">
+            Name should contain 2 symbols at least.
+          </div>
+        </label>
+        <input class="form-input" type="text" placeholder="enter Name" formControlName="name">
+        <label>Username
+          <div *ngIf="formValue.get('username').invalid">
+            Username should contain 2 symbols at least.
+          </div>
+        </label>
+        <input class="form-input" type="text" placeholder="enter Username" formControlName="username">
+        <label>Email
+          <div *ngIf="formValue.get('email').invalid">
+            Email not valid.
+          </div>
+        </label>
+        <input class="form-input" type="email" placeholder="enter Email" formControlName="email">
+        <label>Website
+          <div *ngIf="formValue.get('website').invalid">
+            Website should contain 2 symbols at least.
+          </div>
+        </label>
+        <input class="form-input" type="text" placeholder="enter Website" formControlName="website">
+        <div class="form-button-block">
+          <button class="form-button" (click)="cancelUpdateUserClick()">Cancel</button>
+          <input class="form-button" [disabled]="formValue.invalid" (click)="onUpdateUserClick()" type="submit" value="Submit changes"></div>
+      </form>
+    </div>
+  </div>
+</div>

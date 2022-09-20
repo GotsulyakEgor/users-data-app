@@ -1,0 +1,49 @@
+{
+  "users": [
+    {
+      "id": 5,
+      "name": "Chelsey Dietrich",
+      "username": "Kamren",
+      "email": "Lucio_Hettinger@annie.ca",
+      "website": "demarco.info"
+    },
+    {
+      "id": 7,
+      "name": "Kurtis Weissnat",
+      "username": "Elwyn.Skiles",
+      "email": "Telly.Hoeger@billy.biz",
+      "website": "elvis.io"
+    },
+    {
+      "id": 34,
+      "name": "antpn",
+      "username": "fggd",
+      "email": "sdf@fdfg",
+      "website": "dg"
+    },
+    {
+      "id": 3434,
+      "name": "er",
+      "username": "dgdfd",
+      "email": "egorgotsulyak2@gmail.com",
+      "website": "sfsdfs"
+    },
+    {
+      "id": 5685,
+      "name": "аапвп",
+      "username": "впап",
+      "email": "egorgotsulyak2@gmail.com",
+      "website": "пвапвап"
+    },
+    {
+      "id": 12,
+      "name": "dsad",
+      "username": "sdgdfg",
+      "email": "egorgotsulyak2@gmail.com",
+      "website": "fdgdg"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
